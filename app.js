@@ -12,6 +12,7 @@ const onFriendship = require('./listeners/on-friendship.js')
 
 const Koa = require('koa')
 const app = new Koa()
+const bot = new Wechaty({ name })
 app.use(async (ctx, next) => {
   console.log(ctx.url)
   if (!_.includes(ctx.url, 'wechat')) {
@@ -19,7 +20,6 @@ app.use(async (ctx, next) => {
   }
 
   let ret = false
-  const bot = new Wechaty({ name })
   bot.on('login',  user => onLogin(user, bot))
   bot.on('message',  async msg => {
     await onMessage(msg, bot)
