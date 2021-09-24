@@ -113,7 +113,7 @@ async function onWebRoomMessage (msg, bot) {
 
   if (hasShoudao === 3) {
     await delay(2000)
-    await msg.say('收到')
+    msg.say('收到')
   }
 }
 
