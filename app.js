@@ -13,14 +13,14 @@ const app = new Koa()
 
 let globalCtx
 const bot = new Wechaty({ name })
-bot.on('login',  user => onLogin(user, bot))
-bot.on('message',   msg => onMessage(msg, bot))
 bot.on('scan',  qrcode => {
   require('qrcode-terminal').generate(qrcode, { small: true })
   const qrcodeImageUrl = [
     'https://api.qrserver.com/v1/create-qr-code/?data=',
     encodeURIComponent(qrcode),
   ].join('')
+  bot.on('login',  user => onLogin(user, bot))
+  bot.on('message',   msg => onMessage(msg, bot))
 
   globalCtx.response.type = 'html'
   globalCtx.body = `<img src="${qrcodeImageUrl}">`
@@ -34,8 +34,12 @@ app.use(async (ctx, next) => {
   }
 
   globalCtx = ctx
-  bot.start()
-    .catch(() => bot.stop())
+  try {
+    await bot.start()
+  } catch (e) {
+    await bot.stop()
+    console.log('bot stop')
+  }
 
   while (!ctx.body) {
     await sleep()
