@@ -16,8 +16,10 @@ const bot = new Wechaty({ name })
 bot.on('scan',  qrcode => {
   require('qrcode-terminal').generate(qrcode, { small: true })
   qrcodeImageUrl = [
-    'https://api.qrserver.com/v1/create-qr-code/?data=',
+    // 'https://api.qrserver.com/v1/create-qr-code/?data=',
+    'https://tool.oschina.net/action/qrcode/generate?data=',
     encodeURIComponent(qrcode),
+    '&output=image/png&error=L&type=0&margin=0&size=4',
   ].join('')
 })
 bot.on('login',  user => {
