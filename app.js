@@ -45,7 +45,7 @@ app.use(async (ctx, next) => {
   }
 
   ctx.response.type = 'html'
-  ctx.body = `<img src="${qrcodeImageUrl}">`
+  ctx.body = `<div style="margin: 100px"><img src="${qrcodeImageUrl}"/></div>`
 })
 
 app.listen(3000)
