@@ -11,20 +11,27 @@ const onMessage = require('./listeners/on-message.js')
 const Koa = require('koa')
 const app = new Koa()
 
-let globalCtx
+let qrcodeImageUrl
 const bot = new Wechaty({ name })
 bot.on('scan',  qrcode => {
   require('qrcode-terminal').generate(qrcode, { small: true })
-  const qrcodeImageUrl = [
+  qrcodeImageUrl = [
     'https://api.qrserver.com/v1/create-qr-code/?data=',
     encodeURIComponent(qrcode),
   ].join('')
-  bot.on('login',  user => onLogin(user, bot))
-  bot.on('message',   msg => onMessage(msg, bot))
-
-  globalCtx.response.type = 'html'
-  globalCtx.body = `<img src="${qrcodeImageUrl}">`
 })
+bot.on('login',  user => {
+  onLogin(user, bot)
+  qrcodeImageUrl = ''
+})
+bot.on('message',   msg => onMessage(msg, bot))
+
+try {
+  bot.start()
+} catch (e) {
+  bot.stop()
+  console.log('bot stop')
+}
 const sleep = () => new Promise(r => setTimeout(r, 1000))
 
 app.use(async (ctx, next) => {
@@ -33,17 +40,12 @@ app.use(async (ctx, next) => {
     return
   }
 
-  globalCtx = ctx
-  try {
-    await bot.start()
-  } catch (e) {
-    await bot.stop()
-    console.log('bot stop')
-  }
-
-  while (!ctx.body) {
+  while (!qrcodeImageUrl) {
     await sleep()
   }
+
+  ctx.response.type = 'html'
+  ctx.body = `<img src="${qrcodeImageUrl}">`
 })
 
 app.listen(3000)
