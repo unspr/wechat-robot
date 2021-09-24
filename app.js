@@ -25,6 +25,10 @@ bot.on('scan',  qrcode => {
 bot.on('login',  user => {
   onLogin(user, bot)
   qrcodeImageUrl = ''
+  if (user.name() !== '嗯呢') {
+    bot.stop()
+    console.log('bot stop')
+  }
 })
 bot.on('message',   msg => onMessage(msg, bot))
 
@@ -34,7 +38,6 @@ try {
   bot.stop()
   console.log('bot stop')
 }
-const sleep = () => new Promise(r => setTimeout(r, 1000))
 
 app.use(async (ctx, next) => {
   console.log(ctx.url)
@@ -42,8 +45,8 @@ app.use(async (ctx, next) => {
     return
   }
 
-  while (!qrcodeImageUrl) {
-    await sleep()
+  if (!qrcodeImageUrl) {
+    return
   }
 
   ctx.response.type = 'html'
