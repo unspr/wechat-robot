@@ -8,23 +8,19 @@ specifiers:
   check-node-version: ^3.3.0
   cheerio: ^1.0.0-rc.10
   file-box: ^0.16.8
-  is-pr: ^1.1.0
   koa: ^2.13.1
-  lodash: ^4.17.21
   node-schedule: ^1.3.3
   pm2: ^5.1.1
   qrcode-terminal: ^0.12.0
   request: ^2.88.2
   superagent: ^4.1.0
   wechaty: ^0.60.12
-  wechaty-puppet-wechat: ^0.28.4
+  wechaty-puppet-wechat: ^0.28.1
 
 dependencies:
   cheerio: 1.0.0-rc.10
   file-box: 0.16.8
-  is-pr: 1.1.0
   koa: 2.13.1
-  lodash: 4.17.21
   node-schedule: 1.3.3
   qrcode-terminal: 0.12.0
   request: 2.88.2
@@ -989,11 +985,6 @@ packages:
     resolution: {integrity: sha1-x57Zf380y48robyXkLzDZkdLS3k=}
     dev: false
 
-  /at-least-node/1.0.0:
-    resolution: {integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==}
-    engines: {node: '>= 4.0.0'}
-    dev: false
-
   /aws-sign2/0.7.0:
     resolution: {integrity: sha1-tG6JCTSpWR8tL2+G1+ap8bP+dqg=}
     dev: false
@@ -1305,10 +1296,6 @@ packages:
 
   /chownr/1.1.4:
     resolution: {integrity: sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==}
-    dev: false
-
-  /ci-info/2.0.0:
-    resolution: {integrity: sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ==}
     dev: false
 
   /cli-cursor/2.1.0:
@@ -2332,6 +2319,15 @@ packages:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
     dev: false
 
+  /fs-extra/10.0.0:
+    resolution: {integrity: sha512-C5owb14u9eJwizKGdchcDUQeFtlSHHthBk8pbX9Vc1PFZrLombudjDnNns88aYslCyF6IY5SUw3Roz6xShcEIQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      graceful-fs: 4.2.8
+      jsonfile: 6.1.0
+      universalify: 2.0.0
+    dev: false
+
   /fs-extra/8.1.0:
     resolution: {integrity: sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==}
     engines: {node: '>=6 <7 || >=8'}
@@ -2340,16 +2336,6 @@ packages:
       jsonfile: 4.0.0
       universalify: 0.1.2
     dev: true
-
-  /fs-extra/9.1.0:
-    resolution: {integrity: sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==}
-    engines: {node: '>=10'}
-    dependencies:
-      at-least-node: 1.0.0
-      graceful-fs: 4.2.8
-      jsonfile: 6.1.0
-      universalify: 2.0.0
-    dev: false
 
   /fs.realpath/1.0.0:
     resolution: {integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=}
@@ -2881,13 +2867,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       isobject: 3.0.1
-    dev: false
-
-  /is-pr/1.1.0:
-    resolution: {integrity: sha512-fnsZ0PGOgeO6sb4jsTnSD4KLYmq4ZnzrOLEK4Jvm3wtKynzd4c129yIrYzjknF9mUvsnTgLVqcW8ioyIgdj9sg==}
-    hasBin: true
-    dependencies:
-      ci-info: 2.0.0
     dev: false
 
   /is-regex/1.1.4:
@@ -4150,44 +4129,44 @@ packages:
     resolution: {integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==}
     engines: {node: '>=6'}
 
-  /puppeteer-extra-plugin-stealth/2.8.0_puppeteer-extra@3.2.0:
-    resolution: {integrity: sha512-4uZbsQRTEbvH51/iawzUEKWkK6sz7/FnaTf+5zTFWHtcPmlC7J4bsUqkehVL2W4+MMTNuomTLpv8+uA9Fv4X/A==}
+  /puppeteer-extra-plugin-stealth/2.8.1_puppeteer-extra@3.2.1:
+    resolution: {integrity: sha512-UFCxt0+NkYROGzCK0voUwYA/WxC+m1jBYXasYZ6qxTcjIa3oN8f3Am6oGnhCPoO5OJv5QsDJA5lzZrGVqZ7NYw==}
     engines: {node: '>=8'}
     dependencies:
       debug: 4.3.2
-      puppeteer-extra-plugin: 3.2.0_puppeteer-extra@3.2.0
-      puppeteer-extra-plugin-user-preferences: 2.3.0_puppeteer-extra@3.2.0
+      puppeteer-extra-plugin: 3.2.0_puppeteer-extra@3.2.1
+      puppeteer-extra-plugin-user-preferences: 2.3.1_puppeteer-extra@3.2.1
     transitivePeerDependencies:
       - puppeteer-extra
       - supports-color
     dev: false
 
-  /puppeteer-extra-plugin-user-data-dir/2.3.0_puppeteer-extra@3.2.0:
-    resolution: {integrity: sha512-qljaLnjk2IkkKg9zUJBh4YI8L/yWepTHs0wJaicYgkx0HIHeXBqScnUAA73afIFKFDO/rUfeo0OV4uVRcYIzsA==}
+  /puppeteer-extra-plugin-user-data-dir/2.3.1_puppeteer-extra@3.2.1:
+    resolution: {integrity: sha512-yhaYMaNFdfQ1LbA94ZElW1zU8rh+MFmO+GZA0gtQ8BXc+UZ6aRrWS9flIZvlXDzk+ZsXhCbTEohEwZ8lEDLRVA==}
     engines: {node: '>=8'}
     dependencies:
       debug: 4.3.2
-      fs-extra: 9.1.0
-      puppeteer-extra-plugin: 3.2.0_puppeteer-extra@3.2.0
+      fs-extra: 10.0.0
+      puppeteer-extra-plugin: 3.2.0_puppeteer-extra@3.2.1
     transitivePeerDependencies:
       - puppeteer-extra
       - supports-color
     dev: false
 
-  /puppeteer-extra-plugin-user-preferences/2.3.0_puppeteer-extra@3.2.0:
-    resolution: {integrity: sha512-VxeuRHfJaV9hXyRSH11xL3JUHBodmLGA9WWWjLYGxnoKn1Qni9ctGSMa6ewAhXR/q5Da0pA+zz07CTgcfqg5Hg==}
+  /puppeteer-extra-plugin-user-preferences/2.3.1_puppeteer-extra@3.2.1:
+    resolution: {integrity: sha512-t/FyGQj2aqtHOROqL02z+k2kNQe0cjT0Hd9pG5FJ7x0JXx1722PhOuK7FeJLQMJ+BLl2YvCUgaWSC8Zohjts5A==}
     engines: {node: '>=8'}
     dependencies:
       debug: 4.3.2
       deepmerge: 4.2.2
-      puppeteer-extra-plugin: 3.2.0_puppeteer-extra@3.2.0
-      puppeteer-extra-plugin-user-data-dir: 2.3.0_puppeteer-extra@3.2.0
+      puppeteer-extra-plugin: 3.2.0_puppeteer-extra@3.2.1
+      puppeteer-extra-plugin-user-data-dir: 2.3.1_puppeteer-extra@3.2.1
     transitivePeerDependencies:
       - puppeteer-extra
       - supports-color
     dev: false
 
-  /puppeteer-extra-plugin/3.2.0_puppeteer-extra@3.2.0:
+  /puppeteer-extra-plugin/3.2.0_puppeteer-extra@3.2.1:
     resolution: {integrity: sha512-wbiw12USE3b+maMk/IMaroYsz7rusVI9G+ml6pCFCnFFh91Z9BAEiVzhCpOHuquVXEiCCsDTWhDUgvdNxQHOyw==}
     engines: {node: '>=9.11.2'}
     peerDependencies:
@@ -4196,13 +4175,13 @@ packages:
       '@types/debug': 4.1.7
       debug: 4.3.2
       merge-deep: 3.0.3
-      puppeteer-extra: 3.2.0_puppeteer@7.1.0
+      puppeteer-extra: 3.2.1_puppeteer@7.1.0
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /puppeteer-extra/3.2.0_puppeteer@7.1.0:
-    resolution: {integrity: sha512-e2cky/TsgABCB+ydYecvsrYEpGr5BSYEwgid2PqJVbGeLFN7l5kkcWqzCu6eIIQe7lMqTGkIa3LKzegp0KpX/g==}
+  /puppeteer-extra/3.2.1_puppeteer@7.1.0:
+    resolution: {integrity: sha512-Is6NP4UoogBwfZg+7Dr6R2XlhcsiGSmKLkhHf9AZdgsxKDpTRBIu9jw3PtKbCvn97WliX6MFsEP9Ag0PMTIziA==}
     engines: {node: '>=8'}
     peerDependencies:
       puppeteer: '*'
@@ -5283,8 +5262,8 @@ packages:
       mime: 2.5.2
       promise-retry: 2.0.1
       puppeteer: 7.1.0
-      puppeteer-extra: 3.2.0_puppeteer@7.1.0
-      puppeteer-extra-plugin-stealth: 2.8.0_puppeteer-extra@3.2.0
+      puppeteer-extra: 3.2.1_puppeteer@7.1.0
+      puppeteer-extra-plugin-stealth: 2.8.1_puppeteer-extra@3.2.1
       qr-image: 3.2.0
       request: 2.88.2
       rx-queue: 0.8.5_brolog@1.12.4+rxjs@6.6.7

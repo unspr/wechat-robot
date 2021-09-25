@@ -23,15 +23,13 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
     "file-box": "^0.16.8",
-    "is-pr": "^1.1.0",
     "koa": "^2.13.1",
-    "lodash": "^4.17.21",
     "node-schedule": "^1.3.3",
     "qrcode-terminal": "^0.12.0",
     "request": "^2.88.2",
     "superagent": "^4.1.0",
     "wechaty": "^0.60.12",
-    "wechaty-puppet-wechat": "^0.28.4"
+    "wechaty-puppet-wechat": "^0.28.1"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.6.20",

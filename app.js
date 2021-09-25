@@ -4,7 +4,6 @@
  */
 const { Wechaty } = require('wechaty')
 const name = 'wechat-puppet-wechat'
-const _ = require('lodash')
 const onLogin = require('./listeners/on-login.js')
 const onMessage = require('./listeners/on-message.js')
 
