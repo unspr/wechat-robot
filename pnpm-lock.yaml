@@ -3428,10 +3428,6 @@ packages:
       is-extendable: 0.1.1
     dev: false
 
-  /mkdirp-classic/0.5.3:
-    resolution: {integrity: sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A==}
-    dev: false
-
   /mkdirp/0.5.5:
     resolution: {integrity: sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==}
     hasBin: true
@@ -4209,8 +4205,8 @@ packages:
       progress: 2.0.3
       proxy-from-env: 1.1.0
       rimraf: 3.0.2
-      tar-fs: 2.1.1
-      unbzip2-stream: 1.4.3
+      tar-fs: 2.0.0
+      unbzip2-stream: 1.3.3
       ws: 7.5.5
     transitivePeerDependencies:
       - bufferutil
@@ -4880,11 +4876,11 @@ packages:
       string-width: 3.1.0
     dev: true
 
-  /tar-fs/2.1.1:
-    resolution: {integrity: sha512-V0r2Y9scmbDRLCNex/+hYzvp/zyYjvFbHPNgVTKfQvVrb6guiE/fxP+XblDNR011utopbkex2nM4dHNV6GDsng==}
+  /tar-fs/2.0.0:
+    resolution: {integrity: sha512-vaY0obB6Om/fso8a8vakQBzwholQ7v5+uy+tF3Ozvxv1KNezmVQAiWtcNmMHFSFPqL3dJA8ha6gdtFbfX9mcxA==}
     dependencies:
       chownr: 1.1.4
-      mkdirp-classic: 0.5.3
+      mkdirp: 0.5.5
       pump: 3.0.0
       tar-stream: 2.2.0
     dev: false
@@ -5132,8 +5128,8 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: true
 
-  /unbzip2-stream/1.4.3:
-    resolution: {integrity: sha512-mlExGW4w71ebDJviH16lQLtZS32VKqsSfk80GCfUlwT/4/hNRFsoscrF/c++9xinkMzECL1uL9DDwXqFWkruPg==}
+  /unbzip2-stream/1.3.3:
+    resolution: {integrity: sha512-fUlAF7U9Ah1Q6EieQ4x4zLNejrRvDWUYmxXUpN3uziFYCHapjWFaCAnreY9bGgxzaMCFAPPpYNng57CypwJVhg==}
     dependencies:
       buffer: 5.7.1
       through: 2.3.8

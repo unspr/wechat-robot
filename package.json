@@ -29,7 +29,7 @@
     "request": "^2.88.2",
     "superagent": "^4.1.0",
     "wechaty": "^0.60.12",
-    "wechaty-puppet-wechat": "^0.28.1"
+    "wechaty-puppet-wechat": "^0.28.4"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.6.20",
